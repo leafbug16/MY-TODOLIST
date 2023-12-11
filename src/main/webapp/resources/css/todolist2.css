@@ -1,0 +1,495 @@
+/* 전체적인 세팅 */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', 'Roboto', sans-serif;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+	background: lightgray !important;
+}
+
+.setting-active {
+	background: rgb(107, 227, 162) !important;
+	border: none !important;
+}
+
+div.past label, div.past span {
+	color: gray !important;
+}
+
+#todoList input[type="checkbox"]:checked + label {
+  text-decoration: line-through !important;
+}
+
+.hidden {
+	display: none;
+}
+
+/* wrap */
+#wrap {
+    display: flex;
+}
+
+/* leftWrap */
+#leftWrap {
+    width: 370px;
+    min-height: 1500px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid lightgray;
+}
+
+/* leftTopWrap */
+/* leftLogo-div 부분 */
+#leftLogo-div {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+#leftLogo-title {
+    margin: 0px 10px 0px 10px;
+    font-size: 30px;
+    font-family: 'Asap', sans-serif;
+	color: rgb(86, 86, 86);
+}
+
+#leftLogo-admin {
+    margin: 15px 0px 0px 0px;
+}
+
+/* leftInfo-div 부분 */
+#leftInfo-div {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+}
+
+#leftInfo-mypage {
+    margin: 15px 0px 0px 10px;
+    font-size: 20px;
+}
+
+#leftInfo-mypage:hover {
+    color: dodgerblue;
+}
+
+#leftInfo-logout {
+    width: 75px;
+    height: 30px;
+    font-size: 15px;
+    margin: 15px 0px 0px 10px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background: none;
+    cursor: pointer;
+}
+
+#leftInfo-logout:hover {
+    background: rgb(86, 86, 86);
+    color: white;
+}
+
+#leftInfo-text {
+    margin: 15px 0px 0px 10px;
+}
+
+#leftInfo-board {
+    width: 120px;
+    height: 30px;
+    font-size: 15px;
+    margin: 25px 0px 0px 10px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background-color: white;
+    cursor: pointer;
+}
+
+#leftInfo-board:hover {
+    background: rgb(86, 86, 86);
+    color: white;
+}
+
+#leftInfo-report {
+    width: 120px;
+    height: 30px;
+    font-size: 15px;
+    margin: 15px 0px 0px 10px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background-color: white;
+    cursor: pointer;
+}
+
+#leftInfo-report:hover {
+    background: rgb(86, 86, 86);
+    color: white;
+}
+
+#leftInfo-hr {
+    margin-top: 20px;
+    width: 370px;
+    height: 1px;
+    border: none;
+    background-color: white;
+}
+
+/* leftButtonWrap */
+#leftButtonWrap {
+    display: flex;
+}
+
+#addBtn {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background: none;
+    font-weight: bolder;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+#addBtn:hover {
+    background: lightgray;
+    border: none;
+    color: white;
+}
+
+#deleteAllBtn {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    left: -2px;
+    margin-left: 15px;
+}
+
+#deleteAllBtn:hover {
+    background-color: lightgray;
+    color: white;
+}
+
+/* leftListsWrap */
+#list-ul {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.list-div {
+    position: relative;
+    left: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+    width: 340px;
+}
+
+.list-title-button {
+    width: 277px;
+    height: 35px;
+    border: none;
+    background: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: left;
+}
+
+.list-title-button:hover {
+	background: lightgray;
+}
+
+.listmodBtnb, .listdelBtn {
+    width: 29px;
+    height: 30px;
+    border: none;
+    background: none;
+    border-radius: 50%;
+}
+
+.listmodBtnb {
+	margin-left: 5px;
+}
+
+.listmodBtnb:hover {
+    background: dodgerblue;
+}
+
+.listdelBtn:hover {
+    background: rgb(255, 107, 107);
+}
+
+.list-modify-div {
+    position: relative;
+    left: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+    width: 340px;
+}
+
+#retitle {
+    width: 254px;
+    height: 25px;
+    padding-left: 5px;
+    font-size: 15px;
+}
+
+#listmodBtn {
+    width: 64px;
+    height: 30px;
+    font-size: 12px;
+    background: none;
+    border: 1px solid gray;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 5px;
+    position: relative;
+    top: -2px;
+}
+
+/* center-wrap */
+#center-wrap{
+    width: 1080px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* center-top-wrap */
+#center-top-wrap {
+    width: 1080px;
+    height: 60px;
+    text-align: center;
+}
+
+#todo-input {
+    width: 1080px;
+    height: 60px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.todo-li {
+	margin-top: 20px;
+}
+
+.todo-checkbox {
+	display:none;
+}
+
+.todo-label {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.todo-label::before {
+	display: inline-block;
+    content:"";
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    background: cover;
+    background-image: url("../img/beforeCheck.png");
+    position: relative;
+    top: 6px;
+}
+
+input:checked+label::before{
+	background-image:url("../img/autoCheck.png");
+}    
+
+.setting-button, .modBtnb, .delBtn, .additionalMemo-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    top: -2px;
+}
+
+.additionalMemo-button {
+	margin-left: 10px;
+}
+
+.setting-button {
+	margin-left: 15px;
+}
+
+.setting-info {
+	margin-left: 35px;
+	color: rgb(86, 86, 86);
+}
+
+.recontent {
+	width: 930px;
+    height: 37px;
+    padding-left: 10px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    font-size: 17px;
+}
+
+.modBtn {
+	width: 50px;
+    height: 40px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(48, 131, 255);
+    color: white;
+    position: relative;
+    top: -2px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* setting-wrap */
+.setting-wrap {
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    width: 600px;
+    min-height: 100px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: 33px;
+}
+
+.setting-wrap-span {
+	color: gray;
+	font-size: 15px;
+	display: inline-block;
+	margin-bottom: 15px;
+}
+
+.d-minus-day-span {
+	color: gray;
+	font-size: 15px;
+	display: inline-block;
+}
+
+.d-plus-day-span, .startend-span, .repeat-span {
+	color: gray;
+	font-size: 15px;
+	display: inline-block;
+	margin-top: 20px;
+}
+
+.d-minus-day-button, .d-plus-day-button, .startend-button,
+.repeat-button {
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    border: none;
+    background: none;
+    border: 1px solid gray;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.repeat-button {
+	margin-bottom: 10px;
+}
+
+.d-minus-day-button:hover, .d-plus-day-button:hover, .startend-button:hover,
+.repeat-button:hover {
+    background: rgb(107, 227, 162);
+    border: none;
+}
+
+input[type=date] {
+    width: 95px;
+    height: 25px;
+    margin-top: 10px;
+}
+
+.d-minus-day-input-button, .d-plus-day-input-button, .startend-input-button,
+.repeat-input-button {
+    width: 50px;
+    height: 29px;
+    font-size: 15px;
+    border: none;
+    background: dodgerblue;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.d-minus-day-input-button:hover, .d-plus-day-input-button:hover, .startend-input-button:hover,
+.repeat-input-button:hover {
+    background: white;
+    color: black;
+}
+
+.repeat-cycle-input {
+    width: 60px;
+    height: 23px;
+    padding-left: 5px;
+}
+
+
+/* additionalMemo-wrap */
+.additionalMemo {
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    width: 800px;
+    min-height: 250px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 33px;
+    font-size: 15px;
+    font-family: inherit;
+    background: rgb(255, 247, 209);
+}
+
+
+/* memo */
+#right-wrap {
+    width: 434px;
+    background: rgb(255, 247, 209);
+}
+
+#todo-memo-div {
+    width: 434px;
+    min-height: 1400px;
+}
+
+#memo {
+    width: 434px;
+    min-height: 1481px;
+    resize: none;
+    background: rgb(255, 247, 209);
+    font-size: 16px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    font-family: inherit;
+}
+
+#memo:focus {
+    outline: 1px solid lightgray;
+}
+

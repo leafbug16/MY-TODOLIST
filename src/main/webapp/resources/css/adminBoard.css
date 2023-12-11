@@ -1,0 +1,245 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 전체 구도 */
+#adminboard-wrap {
+    text-align: center;
+    min-height: calc(100vh - 230px); /* footer 높이를 빼준다. */
+}
+#adminboard-wrap-center {
+    display: inline-block;
+    width: 1280px;
+}
+
+/* 마이페이지 설명, 정보 */
+#adminboard-info {
+    text-align: left;
+}
+
+#adminboard-userinfo {
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+#adminboard-userinfo h1 {
+	margin: 0;
+}
+
+/* 마이페이지 네비게이션 */
+#adminboard-nav {
+    display: flex;
+    align-items: center;
+}
+
+#adminboard-nav ul {
+    width: 250px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    left: -39px;
+}
+
+#adminboard-nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+#adminboard-nav hr {
+    width: 45px;
+    height: 2px;
+    border: none;
+    background-color: dodgerblue;
+    position: relative;
+    left: -763px;
+    top: 15px;
+}
+
+#adminboard-delete-user {
+    position: relative;
+    left: 830px;
+}
+
+#adminboard-delete-user {
+    color: red !important;
+}
+
+/* 게시판 설명 */
+#adminboard-info {
+    text-align: left;
+}
+
+/* 게시판 */
+#adminboard-board {
+    width: 1280px;
+    min-height: 100px;
+}
+
+#adminboard-board-table {
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#adminboard-first-tr {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: none;
+    border-right: none;
+    height: 47px;
+}
+
+tr {
+    border: 1px solid rgb(165, 165, 165);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    height: 35px;
+}
+
+tr:hover:not(#adminboard-first-tr) {
+  background: lightgray;
+}
+
+td a {
+	text-decoration: none;
+	color: black;
+}
+
+td a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+th:nth-child(1) {
+    width: 6%;
+}
+
+th:nth-child(2) {
+    width: 56%;
+}
+
+td:nth-child(2) {
+    text-align: left;
+}
+
+th:nth-child(3) {
+	width: 10%;
+}
+
+th:nth-child(4) {
+	width: 10%;
+}
+
+th:nth-child(5), th:nth-child(6), th:nth-child(7) {
+	width: 6%;
+}
+
+td:nth-child(2) {
+    text-align: left;
+    padding-left: 10px;
+}
+
+td {
+	height: 40px;
+}
+
+td:nth-child(2):hover {
+	cursor: pointer;
+}
+
+/* 페이지네이션 */
+#adminboard-pagenation {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#adminboard-pagenation ul {
+    width: 350px;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+#adminboard-pagenation ul li a {
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    color: black;
+}
+
+/* 페이지네이션 active 시 빨갛게 변함 */
+.active {
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+/* 검색폼 */
+#myboard-search-area {
+    width: 1280px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#myboard-search-area-flex {
+    width: 500px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#myboard-select select {
+    width: 100px;
+    height: 35px;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+#myboard-search {
+    display: flex;
+    align-items: center;
+    background: rgb(86, 86, 86);
+}
+
+#myboard-search input {
+    width: 350px;
+    height: 45px;
+    font-size: 17px;
+    border: 0;
+    outline: none;
+    float:left;
+    margin-left: 1px;
+}
+
+#myboard-search button {
+    width: 51px;
+    height: 49px;
+    font-size: 17px;
+    border: none;
+    float: right;
+    background: rgb(86, 86, 86);
+    color: white;
+}

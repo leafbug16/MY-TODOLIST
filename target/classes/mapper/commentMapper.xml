@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "commentMapper">
+	<!-- 특정 게시물 댓글 수 -->
+	<select id="count" parameterType="int" resultType="int">
+		SELECT count(*) FROM comment WHERE bno = #{bno}
+	</select>
+	
+	<!-- 특정 게시물 댓글 모두 조회 -->
+	<select id="selectAll" parameterType="int" resultType="Comment">
+		SELECT * FROM comment WHERE bno = #{bno} ORDER BY regDate ASC, cno ASC
+	</select>
+	
+	<!-- 특정 댓글 하나 조회 -->
+	<select id="select" parameterType="int" resultType="Comment">
+		SELECT * FROM comment WHERE cno = #{cno}
+	</select>
+	
+	<!-- 댓글 작성 -->
+	<insert id="insert" parameterType="Comment">
+		INSERT INTO comment(bno, comment, commenter)
+		VALUES(#{bno}, #{comment}, #{commenter})
+	</insert>
+	
+	<!-- 댓글 수정 -->
+	<update id="update" parameterType="Comment">
+		UPDATE comment SET comment = #{comment}, updateDate = now()
+		WHERE cno = #{cno} and commenter = #{commenter}
+	</update>
+	
+	<!-- 특정 게시글 댓글 모두 삭제 -->
+	<delete id="deleteAll" parameterType="int">
+		DELETE FROM comment WHERE bno = #{bno}
+	</delete>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="delete" parameterType="map">
+		DELETE FROM comment WHERE cno = #{cno}
+	</delete>
+	
+</mapper>

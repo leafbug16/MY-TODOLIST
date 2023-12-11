@@ -1,0 +1,113 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 에디터 */
+#editor-container {
+	height: 500px;
+}
+
+/* 전체 구도 */
+#writing-wrap {
+    text-align: center;
+    min-height: calc(100vh - 230px); /* footer 높이를 빼준다. */
+}
+#writing-wrap-center {
+    display: inline-block;
+    width: 1280px;
+    min-height: 800px;
+}
+
+/* 제목 */
+#writing-header {
+    text-align: left;
+}
+
+/* 게시글 타입 설정(select) */
+#writing-board-type {
+    display: flex;
+}
+
+#select-writing-board-type {
+    width: 250px;
+    height: 40px;
+    font-size: 17px;
+}
+
+/* 게시글 제목 */
+#writing-title {
+    display: flex;
+}
+
+#input-writing-title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    width: 1280px;
+    height: 40px;
+    font-size: 16px;
+}
+
+/* 게시글 내용 */
+#writing-content {
+    display: flex;
+}
+
+#textarea-writing-content {
+    margin-top: 10px;
+    width: 1280px;
+    min-height: 450px;
+    resize: none;
+    font-size: 16px;
+}
+
+/* 버튼 */
+#writing-button {
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+}
+
+#writing-button button {
+    width: 70px;
+    height: 35px;
+    background: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 2px;
+    border: 1px solid #354649;
+}
+
+#writing-button button:hover {
+	background: rgb(86, 86, 86);
+	border: none;
+	color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

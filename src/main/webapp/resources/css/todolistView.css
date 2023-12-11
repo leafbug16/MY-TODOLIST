@@ -1,0 +1,577 @@
+/* 전체적인 세팅 */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', 'Roboto', sans-serif;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+	background: rgb(232, 232, 230) !important;
+}
+
+.setting-active {
+	background: rgb(232, 232, 230) !important;
+}
+
+div.past label, div.past span {
+	color: gray !important;
+}
+
+#todoList input[type="checkbox"]:checked + label {
+  text-decoration: line-through !important;
+}
+
+.hidden {
+	display: none;
+}
+
+/* wrap */
+#wrap {
+    display: flex;
+}
+
+/* leftWrap */
+#leftWrap {
+    width: 370px;
+    min-height: 1500px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid lightgray;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+    background: rgb(247, 247, 245);
+}
+
+/* leftTopWrap */
+/* leftLogo-div 부분 */
+#leftLogo-div {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+#leftLogo-title {
+    margin: 0px 10px 0px 10px;
+    font-size: 30px;
+    font-family: 'Asap', sans-serif;
+	color: black;
+}
+
+#leftLogo-admin {
+    margin: 15px 0px 0px 0px;
+}
+
+/* leftInfo-div 부분 */
+#leftInfo-div {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+}
+
+#current-yoil-div {
+	display: flex;
+}
+
+#current-time {
+	font-size: 50px;
+	font-weight: bold;
+	position: relative;
+	left: 20px;
+	top: -32px;
+}
+
+#current-date, #current-yoil {
+	margin-left: 10px;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: 'Asap', sans-serif;
+}
+
+#current-date {
+	margin-top: 10px;
+}
+
+#current-yoil {
+	font-size: 37px;
+}
+
+#leftInfo-mypage {
+	width: 340px;
+	height: 31px;
+	line-height: 31px;
+	border-radius: 5px;
+    margin: 10px 0px 0px 10px;
+    font-size: 16px;
+}
+
+#leftInfo-mypage:hover {
+    background-color: rgb(232, 232, 230);
+    cursor: pointer;
+}
+
+#mypage-dropmenu {
+	width: 340px;
+	height: 163px;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+	background-color: white;
+	position: absolute;
+	top: 200px;
+	left: 15px;
+}
+
+#mypage-dropmenu-ul {
+	padding: 0;
+}
+
+#mypage-dropmenu-ul li:nth-child(1) {
+	font-size: 25px;
+	font-weight: bold;
+	padding-bottom: 14px;
+	padding-left: 10px;
+	border-bottom: 1px solid lightgray;
+}
+
+
+#mypage-dropmenu-ul li:not(:nth-child(1)) {
+	font-size: 14px;
+	color: gray;
+	padding-left: 3px;
+	padding-top: 7px;
+	width: 320px;
+	height: 25px;
+	border-radius: 5px;
+	margin-left: 7px;
+}
+
+#mypage-dropmenu-ul li:not(:nth-child(1)):hover {
+	background-color: rgb(232, 232, 230);
+	cursor: pointer;
+}
+
+.mypage-dropmenu-hidden {
+	display: none;
+}
+
+#leftInfo-text {
+    margin: 15px 0px 0px 10px;
+}
+
+#leftInfo-board {
+	width: 340px;
+	height: 31px;
+	line-height: 31px;
+	border-radius: 5px;
+    margin: 10px 0px 0px 10px;
+    font-size: 16px;
+}
+
+#leftInfo-board:hover {
+    background-color: rgb(232, 232, 230);
+    cursor: pointer;
+}
+
+/* leftButtonWrap */
+#leftButtonWrap {
+    display: flex;
+    flex-direction: column;
+}
+
+#addBtn {
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    color: gray;
+    text-align: left;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#addBtn:hover {
+    background: rgb(232, 232, 230);
+}
+
+#deleteAllBtn {
+    width: 132px;
+    height: 30px;
+    font-size: 15px;
+    color: gray;
+    text-align: left;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background: none;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+#deleteAllBtn:hover {
+    background: rgb(232, 232, 230);
+}
+
+/* leftListsWrap */
+#list-ul {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.fa-folder {
+	width: 20px;
+	height: 20px;
+	margin-top: 9px;
+	margin-left: 3px;
+}
+
+.list-div {
+	margin-left: 10px;
+	margin-bottom: 5px;
+    width: 350px;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+    line-height: 34px;
+}
+
+.list-div:hover {
+	background: rgb(232, 232, 230);
+}
+
+.list-title-button {
+	padding-left: 3px;
+    width: 300px;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    text-align: left;
+}
+
+.list-title-button:hover {
+	cursor: pointer;
+}
+
+.listmodBtnb, .listdelBtn {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: none;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 7px;
+}
+
+.listmodBtnb {
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+.listmodBtnb:hover, .listdelBtn:hover {
+    background: lightgray;
+}
+
+.list-modify-div {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#retitle {
+    width: 300px;
+    height: 30px;
+    padding-left: 5px;
+    font-size: 15px;
+    background: rgb(247, 247, 245);
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+#listmodBtn {
+    width: 38px;
+    height: 33px;
+    font-size: 12px;
+    background: none;
+    cursor: pointer;
+    margin-left: 5px;
+    border: none;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+/* center-wrap */
+#center-wrap{
+    width: 1114px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* center-top-wrap */
+#center-top-wrap {
+    width: 100%;
+    height: 58px;
+}
+
+#todo-input {
+    width: 1080px;
+    height: 60px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+#content {
+    width: 930px;
+    height: 37px;
+    padding-left: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+#sendBtn {
+    width: 50px;
+    height: 40px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(48, 131, 255);
+    color: white;
+    position: relative;
+    top: -1px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* todoList */
+.todo-li {
+	margin-top: 20px;
+}
+
+.todo-checkbox {
+	display:none;
+}
+
+.todo-label {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.todo-label::before {
+	display: inline-block;
+    content:"";
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    background: cover;
+    background-image: url("../img/beforeCheck.png");
+    position: relative;
+    top: 7px;
+}
+
+input:checked+label::before{
+	background-image:url("../img/autoCheck.png");
+}    
+
+.setting-button, .modBtnb, .delBtn, .additionalMemo-button {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.setting-button:hover, 
+.modBtnb:hover, 
+.delBtn:hover, 
+.additionalMemo-button:hover {
+	background-color: rgb(232, 232, 230);
+}
+
+.additionalMemo-button {
+	margin-left: 10px;
+}
+
+.setting-button {
+	margin-left: 10px;
+}
+
+.setting-info {
+	margin-left: 35px;
+	color: rgb(86, 86, 86);
+	font-size: 15px;
+}
+
+.recontent {
+    width: 930px;
+    height: 37px;
+    padding-left: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.modBtn {
+    width: 50px;
+    height: 40px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(48, 131, 255);
+    color: white;
+    position: relative;
+    top: -1px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* setting-wrap */
+.setting-wrap {
+    border-radius: 5px;
+    width: 600px;
+    min-height: 100px;
+    margin-top: 10px;
+    margin-left: 33px;
+    padding-left: 5px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+
+.setting-wrap-span {
+	color: gray;
+	font-size: 15px;
+	display: inline-block;
+}
+
+.d-minus-day-span, .d-plus-day-span, .startend-span, .repeat-span {
+	color: gray;
+	font-size: 15px;
+	display: inline-block;
+}
+
+.d-minus-day-button, .d-plus-day-button, .startend-button,
+.repeat-button {
+    width: 90px;
+    height: 25px;
+    font-size: 14px;
+    background: none;
+    border: 1px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.repeat-button {
+	margin-bottom: 10px;
+}
+
+.d-minus-day-button:hover, .d-plus-day-button:hover, .startend-button:hover,
+.repeat-button:hover {
+    background: rgb(232, 232, 230);
+}
+
+input[type=date] {
+    width: 95px;
+    height: 25px;
+    margin-top: 10px;
+}
+
+.d-minus-day-input-button, .d-plus-day-input-button, .startend-input-button,
+.repeat-input-button {
+    width: 50px;
+    height: 29px;
+    font-size: 15px;
+    border: none;
+    background: dodgerblue;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.d-minus-day-input-button:hover, .d-plus-day-input-button:hover, .startend-input-button:hover,
+.repeat-input-button:hover {
+    background: white;
+    color: black;
+}
+
+.repeat-cycle-input {
+    width: 60px;
+    height: 23px;
+    padding-left: 5px;
+}
+
+#first-hr, #second-hr, #third-hr, #fourth-hr {
+	width: 605px;
+	height: 1px;
+	border: none;
+	background-color: lightgray;
+	position: relative;
+	left: -5px;
+	margin-top: 15px;
+}
+
+
+/* additionalMemo-wrap */
+.additionalMemo {
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    width: 800px;
+    min-height: 250px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 33px;
+    font-size: 15px;
+    font-family: inherit;
+    background: rgb(255, 247, 209);
+    outline: none;
+}
+
+
+/* memo */
+#right-wrap {
+    width: 400px;
+    background: rgb(255, 247, 209);
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+
+#todo-memo-div {
+    width: 400px;
+    min-height: 1400px;
+}
+
+#memo {
+    width: 400px;
+    min-height: 1481px;
+    resize: none;
+    background: rgb(255, 247, 209);
+    font-size: 16px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    font-family: inherit;
+}
+
+#memo:focus {
+    outline: 1px solid lightgray;
+}

@@ -1,0 +1,160 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+/* 전체 구도 */
+#comment-wrap {
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+}
+#comment-wrap-center {
+    display: inline-block;
+    width: 1280px;
+    min-height: 300px;
+}
+
+/* 댓글 헤더 타이틀 */
+#comment-header {
+    text-align: left;
+}
+
+#comment-header-text {
+	margin-bottom: 5px;
+}
+
+#comment-header hr {
+    border: none;
+    width: 1280px;
+    height: 1px;
+    background-color: rgb(86, 86, 86);
+}
+
+/* commentlist */
+#comment-ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+#comment-li {
+	width: 1280px;
+}
+
+#comment-div {
+	text-align: left;
+}
+
+#commentlist-commenter {
+    white-space: normal;
+    font-size: 16px;
+    word-wrap: break-word;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+#commentlist-comment {
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+#commentlist-regDate {
+	font-size: 14px;
+	color: gray;
+	margin-left: 10px;
+}
+
+#comment-div button {
+    width: 20px;
+    height: 25px;
+    border: none;
+    background-color: white;
+    color: gray;
+    border-radius: 50%;
+}
+
+.modBtnb, .delBtn {
+	cursor: pointer;
+}
+
+#comment-hr {
+    width: 1280px;
+    height: 1px;
+    border: none;
+    background-color: lightgray;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/* 댓글 입력 */
+#comment-input {
+    display: flex;
+    align-items: center;
+    width: 1000px;
+    background: rgb(86, 86, 86);
+    margin-top: 20px;
+}
+
+#comment-input textarea {
+    width: 1000px;
+    height: 90px;
+    font-size: 16px;
+    border: 0;
+    outline: none;
+    float:left;
+    margin-left: 1px;
+    resize: none;
+    padding-left: 5px;
+}
+
+#comment-input button {
+    width: 75px;
+    height: 96px;
+    font-size: 17px;
+    border: none;
+    float: right;
+    background: rgb(86, 86, 86);
+    color: white;
+}
+
+/* 수정창 */
+#comment-modify {
+    display: flex;
+    align-items: center;
+    background: rgb(177, 177, 177);
+    width: 1000px;
+}
+
+#comment-modify textarea {
+    width: 1000px;
+    height: 90px;
+    font-size: 17px;
+    border: 0;
+    outline: none;
+    float:left;
+    margin-left: 1px;
+    resize: none;
+}
+
+#comment-modify button {
+    width: 75px;
+    height: 96px;
+    font-size: 17px;
+    border: none;
+    float: right;
+    background:rgb(177, 177, 177);
+    color: white;
+}

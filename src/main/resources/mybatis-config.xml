@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+		PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-config.dtd">
+		
+<configuration>
+	<typeAliases>
+		<typeAlias alias="User" type="com.leafbug.todolist.model.User"/>
+		<typeAlias alias="Board" type="com.leafbug.todolist.model.Board"/>
+		<typeAlias alias="SearchCondition" type="com.leafbug.todolist.model.SearchCondition"/>
+		<typeAlias alias="Comment" type="com.leafbug.todolist.model.Comment"/>
+		<typeAlias alias="Like" type="com.leafbug.todolist.model.Like"/>
+		<typeAlias alias="Todolist" type="com.leafbug.todolist.model.Todolist"/>
+		<typeAlias alias="Todo" type="com.leafbug.todolist.model.Todo"/>
+		<typeAlias alias="Memo" type="com.leafbug.todolist.model.Memo"/>
+	</typeAliases>
+</configuration>

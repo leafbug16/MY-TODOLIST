@@ -1,0 +1,224 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.hidden {
+	display: none;
+}
+/* 전체 구도 */
+#wrap {
+    text-align: center;
+}
+#wrap-center {
+    display: inline-block;
+    width: 400px;
+    min-height: 300px;
+    margin-top: 100px;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+/* 로그인 실패 */
+#login-failed-msg-div {
+    padding: 0;
+    margin-bottom: 3px;
+}
+
+#login-failed-msg {
+    color: red;
+}
+
+/* 아이디 입력, 비밀번호 입력 */
+#input-id, #input-pwd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#input-id input, #input-pwd input {
+    width: 330px;
+    height: 40px;
+    font-size: 17px;
+    padding-left: 10px;
+    outline: none;
+}
+
+#input-id input {
+    border: 1px solid lightgray;
+    border-radius: 6px 6px 0 0;
+    margin-bottom: 1px;
+}
+
+#input-pwd input {
+    border: 1px solid lightgray;
+    border-radius: 0 0 6px 6px;
+}
+
+#input-id input:focus, #input-pwd input:focus {
+    outline: 1px solid #6C7A89;
+}
+
+/* 아이디 기억 */
+#auto-div {
+    display: flex;
+    justify-content: start;
+    position: relative;
+    top: 10px;
+}
+
+#auto-div label {
+    font-size: 17px;
+    padding-left: 25px;
+}
+
+#auto-div input {
+    margin-left: 33px;
+}
+
+#auto {
+	display: none;
+}
+
+.auto-label::before {
+	display: inline-block;
+    content:"";
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    background: cover;
+    background-image: url("../img/beforeCheck.png");
+    position: relative;
+    top: 6px;
+}
+
+input:checked+label::before{
+	background-image:url("../img/autoCheck.png");
+} 
+
+/* 버튼(로그인) */
+#input-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+#input-button button {
+    width: 340px;
+    height: 50px;
+    background-color: #354649;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+#title {
+	font-family: 'Asap', sans-serif;
+	color: #354649;
+	font-size: 40px;
+    position: relative;
+    top: 110px;
+}
+
+/* 링크들 */
+#links {
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+    left: -10px;
+}
+
+#links a {
+	margin-top: 10px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: rgb(90, 90, 90);
+    font-size: 17px;
+}
+
+#links a:last-child {
+	margin-bottom: 10px;
+}
+
+#links a:hover {
+    color: #354649;
+}
+
+/* findUserInfo */
+#findUserInfo-div {
+	width: 400px;
+	height: 100px;
+	margin: 15px auto;
+	text-align: center;
+}
+
+#email {
+	width: 330px;
+    height: 40px;
+    font-size: 17px;
+    padding-left: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+    border: 1px solid lightgray;
+    outline: none;
+}
+
+#email:focus {
+	outline: 1px solid #6C7A89;
+}
+
+#emailBtn {
+	width: 50px;
+    height: 43px;
+    background-color: #354649;
+    font-size: 15px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+#emailBtn[disabled] {
+	width: 50px;
+    height: 43px;
+    background-color: lightgray;
+    font-size: 15px;
+    font-weight: bolder;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: default;
+}
+
+#email-msg {
+	color: blue;
+}
+
+#email-msg-fail {
+	color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

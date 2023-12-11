@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace는 이름을 구분하기 위한 공간이다 id는 충분히 겹칠 수 있다-->
+<mapper namespace = "boardMapper">
+	<!-- sql 선언 -->
+	<sql id="selectFromBoard">
+       SELECT * FROM board
+   	</sql>
+   	
+   	<sql id="searchCondition">
+   		<choose>
+   			<when test='option=="T"'>
+   				AND title LIKE CONCAT('%', #{keyword}, '%')
+   			</when>
+   			<when test='option=="W"'>
+   				AND writer LIKE CONCAT('%', #{keyword}, '%')
+   			</when>
+   			<otherwise>
+   				AND (title LIKE CONCAT('%', #{keyword}, '%') OR content LIKE CONCAT('%', #{keyword}, '%'))
+   			</otherwise>
+   		</choose>
+   	</sql>
+   	
+   	<!-- 검색조건에 맞는 게시글 리스트 조회 (모든 게시글) -->
+	<select id="searchSelectPageAll" parameterType="SearchCondition" resultType="Board">
+        <include refid="selectFromBoard"/>
+        WHERE boardType IN ('guide', 'notice', 'free')
+        <include refid="searchCondition"/>
+        ORDER BY regDate DESC, bno DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+    
+    <!-- 검색조건에 맞는 게시글 리스트 조회 (가이드)-->
+	<select id="searchSelectPageGuide" parameterType="SearchCondition" resultType="Board">
+        <include refid="selectFromBoard"/>
+        WHERE boardType = "guide"
+        <include refid="searchCondition"/>
+        ORDER BY regDate DESC, bno DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+    
+    <!-- 검색조건에 맞는 게시글 리스트 조회 (공지사항)-->
+	<select id="searchSelectPageNotice" parameterType="SearchCondition" resultType="Board">
+        <include refid="selectFromBoard"/>
+        where boardType="notice"
+        <include refid="searchCondition"/>
+        ORDER BY regDate DESC, bno DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+    
+    <!-- 검색조건에 맞는 게시글 리스트 조회 (자유게시판) -->
+	<select id="searchSelectPageFree" parameterType="SearchCondition" resultType="Board">
+        <include refid="selectFromBoard"/>
+        where boardType="free"
+        <include refid="searchCondition"/>
+        ORDER BY regDate DESC, bno DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+    
+    <!-- 검색조건에 맞는 게시글 리스트 조회 (Report)-->
+	<select id="searchSelectPageReport" parameterType="SearchCondition" resultType="Board">
+        <include refid="selectFromBoard"/>
+        WHERE boardType = "report"
+        <include refid="searchCondition"/>
+        ORDER BY regDate DESC, bno DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+	
+	<!-- 검색조건에 맞는 게시글 수 조회 (전체) -->
+    <select id="searchResultCntAll" parameterType="SearchCondition" resultType="int">
+		select count(*) from board
+        where true
+        <include refid="searchCondition"/>
+    </select>
+    
+    <select id="searchResultCntGuide" parameterType="SearchCondition" resultType="int">
+		select count(*) from board
+        where boardType = "guide"
+        <include refid="searchCondition"/>
+    </select>
+    
+    <select id="searchResultCntNotice" parameterType="SearchCondition" resultType="int">
+		select count(*) from board
+        where boardType = "notice"
+        <include refid="searchCondition"/>
+    </select>
+    
+    <select id="searchResultCntFree" parameterType="SearchCondition" resultType="int">
+		select count(*) from board
+        where boardType = "free"
+        <include refid="searchCondition"/>
+    </select>
+    
+    <select id="searchResultCntReport" parameterType="SearchCondition" resultType="int">
+		select count(*) from board
+        where boardType = "report"
+        <include refid="searchCondition"/>
+    </select>
+	
+	<!-- 게시글 상세보기 -->
+	<select id="select" parameterType="int" resultType="Board">
+		select * from board 
+		where bno = #{bno}
+	</select>
+	
+	<!-- 조회수 증가 -->
+	<update id="increaseViews" parameterType="int">
+		update board
+		set views = views + 1
+		where bno = #{bno}
+	</update>
+	
+	<!-- 글 작성 -->
+	<insert id="insert" parameterType="Board">
+		INSERT INTO board (boardType, title, content, writer) 
+		VALUES (#{boardType}, #{title}, #{content}, #{writer})
+	</insert>
+
+	<!-- 게시글 수정 -->
+	<update id="update" parameterType="Board">
+		UPDATE board
+		SET boardType=#{boardType}, title=#{title}, content=#{content}
+		WHERE bno=#{bno} AND writer=#{writer}
+	</update>
+	
+	<!-- 특정 게시글 삭제 -->
+	<delete id="delete" parameterType="map">
+		delete from board where bno=#{bno}
+	</delete>
+	
+	<!-- 댓글 수 증감 -->
+	<update id="updateCommentCnt" parameterType="map">
+    	UPDATE board SET comments = comments + #{comments} WHERE bno = #{bno}
+    </update>
+    
+    <!-- 좋아요 수 증감 -->
+    <update id="updateLikeCnt" parameterType="map">
+    	UPDATE board SET likes = likes + #{likes} WHERE bno = #{bno}
+    </update>
+    
+    <!-- 좋아요 누른 글 목록 조회 -->
+    <select id="selectPageLike" parameterType="map" resultType="Board">
+    	SELECT board.*
+		FROM board
+		JOIN board_like 
+		ON board.bno = board_like.bno
+		WHERE board_like.liker = #{id}
+		ORDER BY board.regDate DESC
+		LIMIT #{offset}, #{pageSize}
+    </select>
+    
+    <!-- 좋아요 누른 글 수 조회 -->
+    <select id="selectCntLike" parameterType="map" resultType="int">
+    	SELECT COUNT(*)
+	    FROM board
+	    JOIN board_like 
+	    ON board.bno = board_like.bno
+	    WHERE board_like.liker = #{id}
+    </select>
+    
+    <!-- 내가 쓴 글 목록 조회 -->
+    <select id="selectMyPost" parameterType="map" resultType="Board">
+    	SELECT * FROM board
+    	WHERE writer = #{id} AND boardType IN ('guide', 'notice', 'free')
+    	ORDER BY regDate DESC
+    	LIMIT #{offset}, #{pageSize}
+    </select>
+    
+    <!-- 내가 쓴 글 수 조회 -->
+    <select id="selectCntMyPost" parameterType="map" resultType="int">
+    	SELECT COUNT(*) FROM board
+    	WHERE writer = #{id}
+    </select>
+    
+    <!-- 내가 쓴 댓글 목록 조회 + 게시글 제목도 -->
+    <select id="selectMyComment" parameterType="map" resultType="Board">
+    	SELECT board.*, comment.*
+		FROM board
+		JOIN comment
+		ON board.bno = comment.bno
+		WHERE comment.commenter = #{id}
+		ORDER BY board.regDate DESC
+		LIMIT #{offset}, #{pageSize}
+    </select>
+    
+    <!-- 내가 쓴 댓글 목록 수 조회 -->
+    <select id="selectCntMyComment" parameterType="map" resultType="int">
+    	SELECT COUNT(*)
+    	FROM comment
+    	WHERE commenter = #{id}
+    </select>
+    
+    <!-- 내가 쓴 report 목록 조회 -->
+    <select id="selectMyReport" parameterType="map" resultType="Board">
+    	SELECT * FROM board
+    	WHERE writer = #{id} AND boardType = 'report'
+    	ORDER BY regDate DESC
+    	LIMIT #{offset}, #{pageSize}
+    </select>
+    
+    <!-- 내가 쓴 report 수 조회 -->
+    <select id="selectCntMyReport" parameterType="map" resultType="int">
+    	SELECT COUNT(*) FROM board
+    	WHERE writer = #{id} AND boardType = 'report'
+    </select>
+    
+    
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

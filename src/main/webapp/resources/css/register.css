@@ -1,0 +1,152 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+/* 전체 구도 */
+#wrap {
+    text-align: center;
+}
+#wrap-center {
+    display: inline-block;
+    width: 400px;
+    min-height: 300px;
+    margin-top: 100px;
+    border-radius: 6px;
+}
+
+/* title */
+#title {
+	font-family: 'Asap', sans-serif;
+	color: #354649;
+	font-size: 35px;
+    position: relative;
+    top: 110px;
+    left: -64px;
+}
+
+/* 유효성 검사 메시지 */
+.checked {
+    color: rgb(88, 62, 236) !important;
+}
+
+/* 아이디 중복체크 */
+#duplicate-id-check-div {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+#duplicate-id-check {
+    color: red;
+    position: relative;
+    left: 30px;
+    top: 8px;
+    font-size: 14px;
+}
+
+/* 비밀번호 유효성 검사 */
+#pwd-div {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+#pwd-msg {
+    color: red;
+    position: relative;
+    left: 30px;
+    top: 8px;
+    font-size: 14px;
+}
+
+/* 비밀번호 확인 */
+#pwd-check-div {
+	margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+#pwd-check-msg {
+    color: red;
+    position: relative;
+    left: 30px;
+    top: 8px;
+    font-size: 14px;
+}
+
+/* 이메일 중복 체크 */
+#email-check-div {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+#email-check-msg {
+    color: red;
+    position: relative;
+    left: 30px;
+    top: 8px;
+    font-size: 14px;
+}
+
+
+/* 아이디, 비밀번호, 비밀번호 확인, 이메일 */
+#input-id, #input-pwd, #input-pwd-check, #input-email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#input-id input:focus, #input-pwd input:focus,
+#input-pwd-check input:focus, #input-email input:focus {
+    outline: 1px solid #6C7A89;
+}
+
+/* input 조절 */
+#input-id input, #input-pwd input,
+#input-pwd-check input, #input-email input {
+    width: 330px;
+    height: 40px;
+    font-size: 17px;
+    padding-left: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+    border: 1px solid lightgray;
+    outline: none;
+}
+
+/* 버튼(회원가입) */
+#input-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+#input-button button {
+    width: 340px;
+    height: 50px;
+    background-color: #354649;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+/* 로그인으로 돌아가기 링크 */
+#login-link-div {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#login-link-div a {
+    text-decoration: none;
+    color: rgb(90, 90, 90);
+    font-size: 17px;
+}
+
+#login-link-div a:hover {
+    color: #354649;
+}

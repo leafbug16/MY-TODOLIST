@@ -1,0 +1,190 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 전체 구도 */
+#mylike-wrap {
+    text-align: center;
+    min-height: calc(100vh - 230px); /* footer 높이를 빼준다. */
+}
+#mylike-wrap-center {
+    display: inline-block;
+    width: 1280px;
+}
+
+/* 마이페이지 설명, 정보 */
+#mylike-info {
+    text-align: left;
+}
+
+#mylike-userinfo {
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+#mylike-userinfo h1 {
+	margin: 0;
+}
+
+/* 마이페이지 네비게이션 */
+#mylike-nav {
+    display: flex;
+    align-items: center;
+}
+
+#mylike-nav ul {
+    width: 350px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    left: -39px;
+}
+
+#mylike-nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+#mylike-nav hr {
+    width: 76px;
+    height: 2px;
+    border: none;
+    background-color: dodgerblue;
+    position: relative;
+    left: -827px;
+    top: 15px;
+}
+
+#mylike-delete-user {
+    position: relative;
+    left: 830px;
+}
+
+#mylike-delete-user {
+    color: red !important;
+}
+
+/* 게시판 설명 */
+#mylike-info {
+    text-align: left;
+}
+
+/* 게시판 */
+#mylike-board {
+    width: 1280px;
+    min-height: 100px;
+}
+
+#mylike-board-table {
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#mylike-first-tr {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: none;
+    border-right: none;
+    height: 47px;
+}
+
+tr {
+    border: 1px solid rgb(165, 165, 165);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    height: 35px;
+}
+
+tr:hover:not(#mylike-first-tr) {
+  background: lightgray;
+}
+
+td a {
+	text-decoration: none;
+	color: black;
+}
+
+td a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+th:nth-child(1) {
+    width: 8%;
+}
+
+th:nth-child(2) {
+    width: 60%;
+}
+
+th:nth-child(3) {
+	width: 10%;
+}
+
+th:nth-child(4) {
+	width: 10%;
+}
+
+th:nth-child(5), th:nth-child(6) {
+	width: 6%;
+}
+
+td:nth-child(2) {
+    text-align: left;
+}
+
+td {
+	height: 40px;
+}
+
+td:nth-child(2):hover {
+	cursor: pointer;
+}
+
+/* 페이지네이션 */
+#mylike-pagenation {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#mylike-pagenation ul {
+    width: 350px;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+#mylike-pagenation ul li a {
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    color: black;
+}
+
+/* 페이지네이션 active 시 빨갛게 변함 */
+.active {
+    font-weight: bold;
+    border: 1px solid black;
+}

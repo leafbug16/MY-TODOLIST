@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace는 이름을 구분하기 위한 공간이다 id는 충분히 겹칠 수 있다-->
+<mapper namespace = "todolistMapper">
+	
+	<!-- 유저 아이디에 맞는 할일목록 리스트 가져오기 -->
+	<select id="selectAll" parameterType="Todolist" resultType="Todolist">
+		SELECT * FROM todolist
+		WHERE userId = #{userId}
+	</select>
+	
+	<!-- 할일목록 하나 가져오기 -->
+	<select id="select" parameterType="int" resultType="Todolist">
+		SELECT * FROM todolist
+		WHERE lno = #{lno}
+	</select>
+	
+	<!-- 할일목록 늘리기 -->
+	<insert id="insert" parameterType="Todolist">
+		INSERT INTO todolist(userId)
+		VALUES (#{userId})
+	</insert>
+	
+	<!-- 할일목록 제목 수정 -->
+	<update id="update" parameterType="Todolist">
+		UPDATE todolist
+		SET title = #{title}
+		WHERE lno = #{lno}
+	</update>
+	
+	<!-- 할일목록 하나 삭제 -->
+	<delete id="delete" parameterType="Todolist">
+		DELETE FROM todolist
+		WHERE lno = #{lno}
+	</delete>
+	
+	<!-- 할일목록 전체 삭제 -->
+	<delete id="deleteAll" parameterType="Todolist">
+		DELETE FROM todolist
+		WHERE userId = #{userId}
+	</delete>
+	
+	<!-- 목록전체삭제와 연결된 할일 전체삭제 -->
+	<delete id="deleteTodoAll" parameterType="Todolist">
+		DELETE FROM todo
+		WHERE userId = #{userId}
+	</delete>
+	
+	<!-- 목록 끝 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+	
+	<!-- 할일 모두 가져오기 -->
+	<select id="todoSelectAll" parameterType="map" resultType="Todo">
+		SELECT * FROM todo
+		WHERE lno = #{lno}
+	</select>
+	
+	<!-- 할일 추가하기 -->
+	<insert id="todoInsert" parameterType="Todo">
+		INSERT INTO todo(lno, content, userId)
+		VALUES(#{lno}, #{content}, #{userId})
+	</insert>
+	
+	<!-- 할일 수정하기 -->
+	<update id="todoUpdate" parameterType="Todo">
+		UPDATE todo
+		SET content = #{content}
+		WHERE tno = #{tno}
+	</update>
+	
+	<!-- 할일 삭제하기 -->
+	<delete id="todoDelete" parameterType="Todo">
+		DELETE FROM todo
+		WHERE tno = #{tno}
+	</delete>
+	
+	<!-- 목록에 종속된 할일 모두 삭제하기 -->
+	<delete id="todoDeleteAll" parameterType="Todo">
+		DELETE FROM todo
+		WHERE lno = #{lno}
+	</delete>
+	
+	
+	<!-- 할일 끝 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+	
+	<!-- 메모 가져오기 -->
+	<select id="memoSelect" parameterType="map" resultType="Todolist">
+		SELECT * FROM todolist
+		WHERE lno = #{lno}
+	</select>
+	
+	<!-- 메모 입력하기 -->
+	<update id="memoInsert" parameterType="Todolist">
+		UPDATE todolist SET memo = #{memo} WHERE lno = #{lno}
+	</update>
+	
+	<!-- 할일 세팅 관련 시작 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+	
+	<!-- endDate 수정하기 안씀 -->
+	<update id="endDateUpdate" parameterType="Todo">
+		UPDATE todo
+		SET endDate = #{endDate}
+		WHERE tno = #{tno}
+	</update>
+	
+	<!-- dday 수정하기 -->
+	<update id="ddayUpdate" parameterType="Todo">
+		UPDATE todo
+		SET dday = #{dday}, startDate = null, endDate = null, dplusday = null, repeatCycle = null, repeatStart = null
+		WHERE tno = #{tno}
+	</update>
+	
+	<!-- dplusday 수정하기 -->
+	<update id="dplusdayUpdate" parameterType="Todo">
+		UPDATE todo
+		SET dplusday = #{dplusday}, startDate = null, endDate = null, dday = null, repeatCycle = null, repeatStart = null
+		WHERE tno = #{tno}
+	</update>
+	
+	<!-- startDate, endDate 수정하기 -->
+	<update id="startendUpdate" parameterType="Todo">
+		UPDATE todo
+		SET startDate = #{startDate}, endDate = #{endDate}, dday = null, dplusday = null, repeatCycle = null, repeatStart = null
+		WHERE tno = #{tno}
+	</update>
+	
+	<!-- repeat 수정 -->
+	<update id="repeatUpdate" parameterType="Todo">
+		UPDATE todo
+		SET repeatCycle = #{repeatCycle}, repeatStart = #{repeatStart}, startDate = null, endDate = null, dday = null, dplusday = null
+		WHERE tno = #{tno}
+	</update>
+	
+	<!-- complete (체크박스) 체크 수정 -->
+	<update id="completeUpdate" parameterType="Todo">
+		UPDATE todo
+		SET complete = #{complete}, completeDate = #{completeDate}
+		WHERE tno = #{tno}
+	</update>
+	
+	<!-- complete 횟수 늘리기 -->
+	<update id="updateCompletes" parameterType="Todo">
+		UPDATE todo
+		SET completes = completes + 1
+		WHERE tno = #{tno}
+	</update>
+	
+	<!-- 상세메모 수정 -->
+	<update id="updateAdditionalMemo" parameterType="Todo">
+		UPDATE todo
+		SET additionalMemo = #{additionalMemo}
+		WHERE tno = #{tno}
+	</update>
+	
+	<!-- todolist2.jsp 공사중 -->
+	<!-- 특정 유저 할일 오늘 할일만 걸러서 모두 가져오기 -->
+	<select id="selectMainTodos" parameterType="Todo" resultType="Todo">
+		SELECT * FROM todo
+		WHERE <![CDATA[((complete = 'false' AND DATE(regDate) = DATE(now()) AND startDate IS NULL AND dday IS NULL AND dplusday IS NULL AND repeatCycle IS NULL) OR (complete = 'false' AND DATE(startDate) <= DATE(now()) AND DATE(endDate) >= DATE(now())) OR (complete = 'false' AND DATE(dday) >= DATE(now())) OR (complete = 'false' AND repeatCycle IS NOT NULL)) AND userId = #{userId}]]>
+	</select>
+	
+	<!-- 메인 메모 가져오기 -->
+	<select id="selectMainMemo" parameterType="map" resultType="User">
+		SELECT memo FROM user
+		WHERE id = #{id}
+	</select>
+	
+	<!-- 메인 메모 수정하기 -->
+	<update id="updateMainMemo" parameterType="Memo">
+		UPDATE user
+		SET memo = #{memo}
+		WHERE id = #{id}
+	</update>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

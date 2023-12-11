@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace = "userMapper">
+	<!-- 회원가입 시 유저 정보 저장 -->
+	<insert id="insert" parameterType="User">
+		INSERT INTO user(id, pwd, email) VALUES(#{id}, #{pwd}, #{email})
+	</insert>
+	
+	<!-- 로그인 시 유저 정보 가져오기 -->
+	<select id="select" parameterType="map" resultType="User">
+		SELECT * FROM user WHERE id = #{id};
+	</select>
+	
+	<!-- 이메일 중복체크용 -->
+	<select id="selectEmail" parameterType="map" resultType="User">
+		SELECT email FROM user
+		WHERE email = #{email}
+	</select>
+	
+	<!-- 유저 삭제 -->
+	<delete id="delete" parameterType="map">
+		DELETE FROM user WHERE id = #{id};
+	</delete>
+	
+	<!-- 유저 목록 조회 -->
+	<select id="selectUserAll" parameterType="searchCondition" resultType="User">
+		SELECT * FROM user
+		<choose>
+			<when test='option=="W"'>
+   				WHERE id LIKE CONCAT('%', #{keyword}, '%')
+   			</when>
+		</choose>
+		ORDER BY id ASC
+		LIMIT #{offset}, #{pageSize}
+	</select>
+	
+	<!-- 유저 수 -->
+	<select id="selectCntUserAll" parameterType="map" resultType="int">
+		SELECT COUNT(*) FROM user
+	</select>
+	
+	<!-- 아이디 비밀번호 찾기 -->
+	<select id="selectUserInfo" parameterType="User" resultType="User">
+		SELECT * FROM user WHERE email = #{email};
+	</select>
+	
+	<!-- 로그인 유지용 uuid 수정 -->
+	<update id="updateUuid" parameterType="map">
+		UPDATE user
+		SET uuid = #{uuid}
+		WHERE id = #{id}
+	</update>
+	
+	<!-- uuid로 유저 정보 가져오기 -->
+	<select id="selectUuid" parameterType="map" resultType="User">
+		SELECT * FROM user WHERE uuid = #{uuid};
+	</select>
+	
+	<!-- 메인 메모 가져오기 -->
+	<select id="selectMainMemo" parameterType="map" resultType="User">
+		SELECT * FROM user
+		WHERE id = #{id}
+	</select>
+	
+	<!-- 메인 메모 수정하기 -->
+	<update id="updateMainMemo" parameterType="Memo">
+		UPDATE user
+		SET memo = #{memo}
+		WHERE id = #{id}
+	</update>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,241 @@
+/* 전체적인 세팅 */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* leftWrap */
+#leftWrap {
+    width: 370px;
+    min-height: 1500px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid lightgray;
+}
+
+/* leftTopWrap */
+/* leftLogo-div 부분 */
+#leftLogo-div {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+#leftLogo-title {
+    margin: 0px 10px 0px 10px;
+    font-size: 30px;
+    font-family: 'Asap', sans-serif;
+	color: rgb(86, 86, 86);
+}
+
+#leftLogo-admin {
+    margin: 15px 0px 0px 0px;
+}
+
+/* leftInfo-div 부분 */
+#leftInfo-div {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+}
+
+#leftInfo-mypage {
+    margin: 15px 0px 0px 10px;
+    font-size: 20px;
+}
+
+#leftInfo-mypage:hover {
+    color: dodgerblue;
+}
+
+#leftInfo-logout {
+    width: 75px;
+    height: 30px;
+    font-size: 15px;
+    margin: 15px 0px 0px 10px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background: none;
+    cursor: pointer;
+}
+
+#leftInfo-logout:hover {
+    background: rgb(86, 86, 86);
+    color: white;
+}
+
+#leftInfo-text {
+    margin: 15px 0px 0px 10px;
+}
+
+#leftInfo-board {
+    width: 120px;
+    height: 30px;
+    font-size: 15px;
+    margin: 25px 0px 0px 10px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background-color: white;
+    cursor: pointer;
+}
+
+#leftInfo-board:hover {
+    background: rgb(86, 86, 86);
+    color: white;
+}
+
+#leftInfo-report {
+    width: 120px;
+    height: 30px;
+    font-size: 15px;
+    margin: 15px 0px 0px 10px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background-color: white;
+    cursor: pointer;
+}
+
+#leftInfo-report:hover {
+    background: rgb(86, 86, 86);
+    color: white;
+}
+
+#leftInfo-hr {
+    margin-top: 20px;
+    width: 370px;
+    height: 1px;
+    border: none;
+    background-color: white;
+}
+
+/* leftButtonWrap */
+#leftButtonWrap {
+    display: flex;
+}
+
+#addBtn {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background: none;
+    font-weight: bolder;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+#addBtn:hover {
+    background: lightgray;
+    border: none;
+    color: white;
+}
+
+#deleteAllBtn {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    left: -2px;
+    margin-left: 15px;
+}
+
+#deleteAllBtn:hover {
+    background-color: lightgray;
+    color: white;
+}
+
+/* leftListsWrap */
+#list-ul {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.list-div {
+    position: relative;
+    left: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+    width: 340px;
+}
+
+.list-title-button {
+    width: 277px;
+    height: 35px;
+    border: none;
+    background: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: left;
+}
+
+.list-title-button:hover {
+	background: lightgray;
+}
+
+.listmodBtnb, .listdelBtn {
+    width: 29px;
+    height: 30px;
+    border: none;
+    background: none;
+    border-radius: 50%;
+}
+
+.listmodBtnb {
+	margin-left: 5px;
+}
+
+.listmodBtnb:hover {
+    background: dodgerblue;
+}
+
+.listdelBtn:hover {
+    background: rgb(255, 107, 107);
+}
+
+.list-modify-div {
+    position: relative;
+    left: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+    width: 340px;
+}
+
+#retitle {
+    width: 254px;
+    height: 25px;
+    padding-left: 5px;
+    font-size: 15px;
+}
+
+#listmodBtn {
+    width: 64px;
+    height: 30px;
+    font-size: 12px;
+    background: none;
+    border: 1px solid gray;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 5px;
+    position: relative;
+    top: -2px;
+}

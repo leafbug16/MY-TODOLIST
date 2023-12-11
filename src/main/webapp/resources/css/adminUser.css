@@ -1,0 +1,228 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 전체 구도 */
+#adminuser-wrap {
+    text-align: center;
+}
+#adminuser-wrap-center {
+    display: inline-block;
+    width: 1280px;
+    height: 700px;
+}
+
+/* 마이페이지 설명, 정보 */
+#adminuser-info {
+    text-align: left;
+}
+
+#adminuser-userinfo {
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+#adminuser-userinfo h1 {
+	margin: 0;
+}
+
+/* 마이페이지 네비게이션 */
+#adminuser-nav {
+    display: flex;
+    align-items: center;
+}
+
+#adminuser-nav ul {
+    width: 250px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    left: -39px;
+}
+
+#adminuser-nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+#adminuser-nav hr {
+    width: 58px;
+    height: 2px;
+    border: none;
+    background-color: dodgerblue;
+    position: relative;
+    left: -692px;
+    top: 15px;
+}
+
+#adminuser-delete-user {
+    position: relative;
+    left: 830px;
+}
+
+#adminuser-delete-user {
+    color: red !important;
+}
+
+/* 게시판 설명 */
+#adminuser-info {
+    text-align: left;
+}
+
+/* 게시판 */
+#adminuser-board {
+    width: 1280px;
+    min-height: 100px;
+}
+
+#adminuser-board-table {
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#adminuser-first-tr {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: none;
+    border-right: none;
+    height: 47px;
+}
+
+tr {
+    border: 1px solid rgb(165, 165, 165);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    height: 35px;
+}
+
+tr:hover:not(#adminuser-first-tr) {
+  background: lightgray;
+}
+
+td a {
+	text-decoration: none;
+	color: black;
+}
+
+td a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+th:nth-child(1) {
+    width: 25%;
+}
+
+th:nth-child(2) {
+    width: 25%;
+}
+
+th:nth-child(3) {
+	width: 25%;
+}
+
+th:nth-child(4) {
+	width: 15%;
+}
+
+th:nth-child(5) {
+    width: 10%;
+}
+
+/* 페이지네이션 */
+#adminuser-pagenation {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#adminuser-pagenation ul {
+    width: 350px;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+#adminuser-pagenation ul li a {
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    color: black;
+}
+
+/* 페이지네이션 active 시 빨갛게 변함 */
+.active {
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+/* 검색폼 */
+#adminuser-search-area {
+    width: 1280px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#adminuser-search-area-flex {
+    width: 500px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#adminuser-select select {
+    width: 100px;
+    height: 35px;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+#adminuser-search {
+    display: flex;
+    align-items: center;
+    background: rgb(86, 86, 86);
+}
+
+#adminuser-search input {
+    width: 350px;
+    height: 45px;
+    font-size: 17px;
+    border: 0;
+    outline: none;
+    float:left;
+    margin-left: 1px;
+}
+
+#adminuser-search button {
+    width: 51px;
+    height: 49px;
+    font-size: 17px;
+    border: none;
+    float: right;
+    background: rgb(86, 86, 86);
+    color: white;
+}
