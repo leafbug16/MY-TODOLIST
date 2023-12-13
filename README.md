@@ -1,7 +1,7 @@
 # MY-TODOLIST
 ### MY TODOLIST **(개인 프로젝트)**
 기간 : 2023.11~ / 링크 : http://mytodolist.shop/todolist/<br>
-자세히 보기 : https://drive.google.com/file/d/1iv27YZVcU75sXO0p-IxzfXNqjhXlS_V-/view?usp=drive_link<br>
+자세히 보기 : https://drive.google.com/file/d/1IeLGPdv5peqxZ0aO_5dGsGLPWa0BJ_Xd/view?usp=drive_link<br>
 다양한 할 일을 쉽게 세팅하고 관리 할 수 있는 to do list 웹사이트입니다.<br>
 기존의 to do list에서 불편함을 느껴 단점들을 개선, 필요한 기능을 추가하며 개발했습니다.<br>
 다양한 기능이 있고 가독성이 좋은 to do list를 원하는 사람들에게 도움이 되었으면 하는 마음으로 개발했습니다.<br>
