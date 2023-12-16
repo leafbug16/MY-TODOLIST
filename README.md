@@ -2,7 +2,8 @@
 기간 : 2023.11-2023.12<br>
 링크 : http://mytodolist.shop/todolist/<br>
 
-FEATURES
+
+**FEATURES**
 - D-Day 설정
 - D+Day 설정
 - 시작-종료 구간 설정
