@@ -1,5 +1,4 @@
 # MY-TODOLIST
-### MY TODOLIST **(개인 프로젝트)**
 기간 : 2023.11-2023.12<br>
 링크 : http://mytodolist.shop/todolist/<br>
 
