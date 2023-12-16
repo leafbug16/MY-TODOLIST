@@ -1,7 +1,6 @@
 # MY-TODOLIST
 기간 : 2023.11-2023.12<br>
-링크 : http://mytodolist.shop/todolist/<br>
-
+링크 : http://mytodolist.shop/todolist/<br><br>
 
 **FEATURES**
 - D-Day 설정
