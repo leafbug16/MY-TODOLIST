@@ -1,5 +1,5 @@
 # MY-TODOLIST
-기간 : 2023.11-2023.12<br>
+기간 : 2023.10.~2023.11.<br>
 링크 : http://mytodolist.shop/todolist/<br><br>
 
 **주요 기능**
